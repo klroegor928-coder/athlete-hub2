@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.app {
+    max-width: 1000px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 35px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    color: #1e293b;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h1::after {
+    content: "⚡";
+    font-size: 28px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 30px 0 25px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 16px 10px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+}
+
+.nav-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+
+/* МЯГКИЕ ПРИГЛУШЕННЫЕ ЦВЕТА */
+.red { background: #f56565; }
+.blue { background: #4299e1; }
+.green { background: #48bb78; }
+
+.section {
+    display: none;
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 28px;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.section.active {
+    display: block;
+}
+
+/* КАРТОЧКИ */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+}
+
+/* ПРОГРЕСС БАР */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #48bb78;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+/* ЧЕКБОКСЫ */
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    border: 1px solid #edf2f7;
+    transition: all 0.2s;
+}
+
+.task-item:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.task-item input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #48bb78;
+}
+
+.task-completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+    color: #718096;
+}
+
+/* КНОПКИ ВЫБОРА ПИТАНИЯ */
+.diet-buttons {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.diet-btn {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.diet-btn:hover {
+    background: #f7fafc;
+    border-color: #48bb78;
+}
+
+.diet-btn.active {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+}
+
+/* ДНИ ТРЕНИРОВОК */
+.workout-day {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 6px solid;
+}
+
+.day-header {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.exercise-item:last-child {
+    border-bottom: none;
+}
+
+.exercise-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* АНИМАЦИИ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section.active {
+    animation: fadeIn 0.3s ease;
+}
+
+/* АДАПТАЦИЯ */
+@media (max-width: 600px) {
+    .app { padding: 20px; }
+    .nav-buttons { flex-direction: column; }
+    .diet-buttons { flex-direction: column; }
+}
